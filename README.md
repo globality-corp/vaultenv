@@ -49,3 +49,22 @@ To control the output format, use a Jinaj2 template string:
 Some format styles are built-in:
 
     vaultenv --terraform --matcher "^b" --vault-password-file /tmp/vault-pass.txt ./vaultenv/tests/vault.yml
+
+
+## Settings
+
+Default values for commonly used options can be written to `~/.vaultenv` using config format:
+
+    [production]
+    vault_file = /path/to/vault
+    vault_password_file = /path/to/vault_password_file
+    template_string = TF_VAR_{{ key }}
+    matcher = ^log
+
+Then, simply use the section name as the vault file path:
+
+    vaultenv production
+
+In this form, it will likely be useful to `eval` the outcome:
+
+    eval "$(vaultenv production)"
