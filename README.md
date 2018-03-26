@@ -7,9 +7,16 @@ CLI interface to export Ansible vault values as environment variables.
 
 ## Setup
 
-Install `vaultenv` into a virtualenv (e.g. using `virtualenv-wrapper`):
+Use `vaultenv` with a virtualenv (e.g. using `virtualenv-wrapper`):
 
     mkvirtualenv vaultenv
+
+For normal usage, install from PyPi:
+
+    pip install vaultenv
+
+For development, install test requirements and local source:
+
     pip install nose PyHamcrest
     pip install -e .
 
